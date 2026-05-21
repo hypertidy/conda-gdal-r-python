@@ -3,6 +3,11 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
+  # because humans need to do things
+  - nano
+  - git
+  - wget
+  # Python and R and spatial
   - python>=3.12
   - r-base>=4.5
   - gdal

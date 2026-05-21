@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run sanity tests
-        shell: bash
+        shell: /usr/local/bin/_entrypoint.sh /bin/bash --noprofile --norc -eo pipefail {0}
         run: |
           chmod +x local-test.sh
           bash local-test.sh
