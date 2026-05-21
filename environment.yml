@@ -12,7 +12,6 @@ dependencies:
   - r-terra
   - r-sf
   - r-gdalraster
-  - r-vapour
   # R bridge
   - r-reticulate
   # Python geo
