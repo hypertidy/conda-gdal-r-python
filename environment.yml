@@ -12,6 +12,11 @@ dependencies:
   - r-terra
   - r-sf
   - r-gdalraster
+  # R all for vapour which installs from source (for now)
+  - r-glue
+  - r-lifecycle
+  - r-vctrs
+  - r-stringr
   - r-stringi
   - r-jsonlite
   - r-nanoarrow
