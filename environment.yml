@@ -12,6 +12,11 @@ dependencies:
   - r-terra
   - r-sf
   - r-gdalraster
+  - r-stringi
+  - r-jsonlite
+  - r-nanoarrow
+  - r-wk
+  - r-cpp11
   # R bridge
   - r-reticulate
   # Python geo
