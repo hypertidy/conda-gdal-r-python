@@ -33,3 +33,4 @@ dependencies:
   - rasterio
   - pyogrio
   - fiona
+  - geopandas ## needed to test pyogrio
