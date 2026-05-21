@@ -25,9 +25,10 @@ jobs:
       options: --user root
     steps:
       - uses: actions/checkout@v4
-
+      # _entrypoint.sh wrapper is micromamba-docker's mechanism for re-activating the base env when
+      # Actions has bypassed the normal entrypoint.
       - name: Run sanity tests
-        shell: /usr/local/bin/_entrypoint.sh /bin/bash --noprofile --norc -eo pipefail {0}
         run: |
+          export PATH="/opt/conda/bin:$PATH"
           chmod +x local-test.sh
           bash local-test.sh
