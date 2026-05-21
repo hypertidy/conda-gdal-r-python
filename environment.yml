@@ -1,0 +1,21 @@
+name: base
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python>=3.12
+  - r-base>=4.5
+  - gdal
+  - geos
+  - proj
+  # R geo
+  - r-terra
+  - r-sf
+  - r-gdalraster
+  - r-vapour
+  # R bridge
+  - r-reticulate
+  # Python geo
+  - rasterio
+  - pyogrio
+  - fiona

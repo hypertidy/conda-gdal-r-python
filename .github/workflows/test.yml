@@ -1,0 +1,33 @@
+name: test
+
+on:
+  workflow_run:
+    workflows: [build]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    # Also run tests independently on Tuesdays — catches conda-forge regressions
+    # even when the image itself hasn't changed
+    - cron: '45 4 * * 2'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  sanity:
+    if: >
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/hypertidy/conda-gdal-r-python:latest
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run sanity tests
+        shell: bash
+        run: |
+          chmod +x local-test.sh
+          bash local-test.sh
