@@ -8,7 +8,7 @@ RUN micromamba install -y -n base -f /tmp/env.yml \
  && micromamba clean --all --yes \
  && rm /tmp/env.yml
 
-# Activate base env for all subsequent RUN layers and at runtime
+# Activate base env for all subsequent RUN layers and runtime
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 
 RUN Rscript -e "install.packages('vapour', repos = c('https://hypertidy.r-universe.dev', 'https://cloud.r-project.org'))"
